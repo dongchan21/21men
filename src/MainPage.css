@@ -1,0 +1,154 @@
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.info-card {
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.8s solid;
+  border: 2px solid transparent;
+}
+
+.info-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.info-card-image {
+  width: 120px;      /* 원하는 고정 너비 */
+  height: 120px;     /* 원하는 고정 높이 */
+  object-fit: contain; /* 비율 유지하면서 안 잘리게 */
+  margin-top: 1rem;
+  margin: 1rem auto;
+}
+
+.badge {
+  background-color: #8b5cf6;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.info-card-desc {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.info-card-link {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0;
+}
+
+.info-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
+  border: 4px solid #4ade80;
+}
+
+/* 비주얼 요소 */
+.info-card-visual {
+  height: 80px;
+  margin: 1rem 0;
+}
+
+.visual-circles {
+  display: flex;
+  gap: -10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-circles::before,
+.visual-circles::after,
+.visual-circles {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #444;
+}
+
+.visual-circles.purple::before {
+  background: linear-gradient(to right, #a855f7, #9333ea);
+}
+
+.visual-circles.blue::after {
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+.visual-shapes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.visual-shapes::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid #ec4899;
+}
+
+.visual-shapes::after {
+  content: "";
+  width: 20px;
+  height: 50px;
+  background: #9333ea;
+}
+
+.choice-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.choice-card {
+  background-color: white;
+  color: #111827;
+  border: 2px solid #d1d5db;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.choice-card:hover {
+  background-color: #e0f2fe;
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+}
