@@ -129,7 +129,7 @@ export default function FourBoxPage() {
                   })()}
                 </div>
 
-                <button onClick={handleClose}>닫기</button>
+                <button style={{ border: 'none', fontSize: '18px'}} onClick={handleClose}>닫기</button>
               </div>
 
 
