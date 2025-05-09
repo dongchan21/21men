@@ -1,11 +1,12 @@
 .page {
-    display: flex;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    gap: 64px;
-  }
+  display: flex;
+  height: 100vh;
+  padding: 20px 40px; /* ←✅ 좌우 여백 균형 있게 */
+  box-sizing: border-box;
+  font-family: sans-serif;
+  gap: 64px; /* box와 popup 사이 간격 */
+}
+
 
 .page-title {
     font-size: 24px;
@@ -21,12 +22,13 @@
     justify-content: flex-start;
   }
   
-  .box-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 60%;
-  }
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 60%; /* 또는 원하는 고정값 (예: 720px) */
+}
+
 
   .box {
     background-color: #f0f0f0;
@@ -41,8 +43,8 @@
   }
 
   .box-image {
-  width: 450px;
-  height: 300px;
+  width: 330px;
+  height: 180px;
   object-fit: cover;   /* ✅ 이미지 비율 유지하면서 잘 맞춰줌 */
   border-radius: 6px;  /* 선택: 둥글게 하고 싶을 경우 */
   margin-bottom: 10px;

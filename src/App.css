@@ -81,11 +81,12 @@ html, body {
 
 .input:focus {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-  border-color: #00ff0d;
+  border-color: black;
 }
 
 .button {
-  background-color: #00ff0d;
+  margin-top: 0.5rem;
+  background-color: black;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -98,5 +99,5 @@ html, body {
 }
 
 .button:hover {
-  background-color: #00ff0d;
+  background-color: black;
 }

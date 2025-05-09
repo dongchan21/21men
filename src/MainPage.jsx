@@ -10,7 +10,7 @@ export default function MainPage() {
     
   return (
     <div className="page-container">
-      <HeaderNav hideNav={true} />
+      <header className="main-header"><h2>Resource Corp.</h2></header>
       <div className="card-grid">
         {/* 스마트팜 카드 */}
         <div className="info-card" onClick={() => navigate("/age")}>
@@ -23,7 +23,7 @@ export default function MainPage() {
           <img src="/tree.png" alt="나무" />
         </div>
         
-        <p className="info-card-link">더 알아보려면 클릭하세요 &gt;</p>
+        <p className="info-card-link">세계적 식량 문제 해결 &gt;</p>
         </div>
 
         {/* 지원 카드 */}
@@ -37,7 +37,7 @@ export default function MainPage() {
           <img src="/money.png" alt="지원 이미지" />
         </div>
 
-        <p className="info-card-link">지원 가능 여부 알아보기 &gt;</p>
+        <p className="info-card-link">돈 받고 싶으신가요? &gt;</p>
         </div>
 
 
@@ -53,7 +53,7 @@ export default function MainPage() {
           <img src="/file.png" alt="파일" />
         </div>
 
-        <p className="info-card-link">더 알아보기 &gt;</p>
+        <p className="info-card-link">스타트업 뛰어들기 &gt;</p>
         </div>
       </div>
     </div>
