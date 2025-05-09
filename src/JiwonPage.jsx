@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./JiwonPage.css";
 import HeaderNav from "./components/ui/HeaderNav";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function JiwonPage() {
   const [expanded, setExpanded] = useState(null);
+  const navigate = useNavigate();
   const getProgramDescription = (name) => {
     switch (name) {
       case "🌱 청년 스마트팜 창업 보육사업":
@@ -267,8 +269,8 @@ export default function JiwonPage() {
     <div className="page-container">
       <header className="main-header" style={{ display: 'flex', alignItems: 'center', padding: '10px 20px' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="로고" style={{ width: '40px', height: '40px', marginRight: '12px' }} />
-          <h2 style={{ margin: 0, fontSize: '20px' }}>Resource Corp.</h2>
+          <img src="/logo.png" alt="로고" onClick={() => navigate("/")} style={{ width: '40px', height: '40px', marginRight: '12px' }} />
+          <h2 onClick={() => navigate("/")} style={{ margin: 0, fontSize: '20px' }}>Farm Link</h2>
         </div>
       </header>
 
