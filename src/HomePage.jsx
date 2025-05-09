@@ -42,13 +42,8 @@ export default function HomePage() {
       borderRadius: '16px',
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
     }}>
-<<<<<<< HEAD
       <h2 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '16px' }}>
         내 땅에 설치 가능한 스마트팜 시설은?
-=======
-      <h2 style={{ fontSize: '27px', fontWeight: 'bold', marginBottom: '16px' }}>
-        내 땅에 설치 가능한 스마트팜 시설을 알려드릴게요!
->>>>>>> 93bf6e80dcff464c153c9ae0963dda0b1e414409
       </h2>
 
       <div style={{
