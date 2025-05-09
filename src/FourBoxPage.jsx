@@ -56,12 +56,32 @@ export default function FourBoxPage() {
         </div>
 
         {selectedBox && (
-          <div className="popup">
-            <div className="popup-header">
-              <strong>{selectedBox.title}</strong>
-              <button onClick={handleClose}>닫기</button>
+          <div
+            className="popup"
+            style={{
+              backgroundImage: `url(${selectedBox.image})`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
+              position: 'relative'
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(255,255,255,0.7)',
+              zIndex: 1,
+              borderRadius: '12px'
+            }} />
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <div className="popup-header">
+                <strong>{selectedBox.title}</strong>
+                <button onClick={handleClose}>닫기</button>
+              </div>
+              <p>{selectedBox.content}</p>
             </div>
-            <p>{selectedBox.content}</p>
           </div>
         )}
       </div>
