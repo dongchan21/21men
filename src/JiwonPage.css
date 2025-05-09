@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+.question-section h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
 /* 5대5 비율 설정 */
 .question-section {
   width : 30%;
