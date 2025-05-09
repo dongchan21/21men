@@ -74,7 +74,7 @@ export default function MainPage() {
           className="info-card"
           variants={cardVariants}
           whileHover={{ scale: 1.03 }} // ✅ 이걸로 확실하게 동작시킴
-          onClick={() => navigate("")}
+          onClick={() => navigate("/start")}
         >
           <span className="info-card-title">스타트업/창업 성공 사례</span>
           <h4 className="info-card-desc">스마트팜으로<br />청년 창업에 성공한
