@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './FourBoxPage.css';
 import HeaderNav from './components/ui/HeaderNav';
 import { Button } from './components/ui/button';
+import { useLocation } from 'react-router-dom';
 
 export default function FourBoxPage() {
   const [popupBox, setPopupBox] = useState(null);
@@ -10,6 +11,9 @@ export default function FourBoxPage() {
   const [isLeaving, setIsLeaving] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [boxEntered, setBoxEntered] = useState(false);
+  const location = useLocation();
+  const address = location.state?.address || "";
+
 
   useEffect(() => {
     const timer = setTimeout(() => setBoxEntered(true), 100);
@@ -55,12 +59,30 @@ export default function FourBoxPage() {
       <div className="page">
         <div className="content-group">
           <div className={`box-grid${popupBox ? ' with-popup' : ''} ${boxEntered ? 'box-entered' : ''}`}>
-            {boxes.map((box) => (
-              <div key={box.id} className="box" onClick={() => handleClick(box)}>
-                <img src={box.image} alt={box.title} className="box-image" />
-                <div className="box-title">{box.title}</div>
-              </div>
-            ))}
+            {boxes.map((box) => {
+              let highlightClass = "";
+
+              if (address.trim() === "강원특별자치도 태백시 화전동 322-34") {
+                highlightClass = "highlighted-box-green";
+              } else if (address.trim() === "경기도 성남시 수정구 사송동 687") {
+                highlightClass = "highlighted-box-red";
+              } else if (address.trim() === "울산광역시 북구 신천동 548-1") {
+                highlightClass = box.id === 1 ? "highlighted-box-green" : "highlighted-box-red";
+              }
+
+              return (
+                <div
+                  key={box.id}
+                  className={`box ${highlightClass}`}
+                  onClick={() => handleClick(box)}
+                >
+                  <img src={box.image} alt={box.title} className="box-image" />
+                  <div className="box-title">{box.title}</div>
+                </div>
+              );
+            })}
+
+
           </div>
 
           {popupBox && (
