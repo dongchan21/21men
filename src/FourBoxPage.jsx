@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './FourBoxPage.css';
 import HeaderNav from './components/ui/HeaderNav';
 import { Button } from './components/ui/button';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function FourBoxPage() {
   const [popupBox, setPopupBox] = useState(null);
@@ -13,6 +13,7 @@ export default function FourBoxPage() {
   const [boxEntered, setBoxEntered] = useState(false);
   const location = useLocation();
   const address = location.state?.address || "";
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -68,7 +69,10 @@ export default function FourBoxPage() {
                 highlightClass = "highlighted-box-red";
               } else if (address.trim() === "울산광역시 북구 신천동 548-1") {
                 highlightClass = box.id === 1 ? "highlighted-box-green" : "highlighted-box-red";
+              } else {
+                highlightClass = "highlighted-box-red";
               }
+              
 
               return (
                 <div
@@ -93,7 +97,7 @@ export default function FourBoxPage() {
               </div>
               <p>지원 관련 정보를 여기에 표시합니다.</p>
               <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
-                <Button onClick={() => alert('지원 자격 확인 페이지로 이동')}>지원 자격 확인!</Button>
+                <Button onClick={() => navigate("/jiwon")}>지원 자격 확인!</Button>
               </div>
             </div>
           )}

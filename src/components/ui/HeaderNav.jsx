@@ -6,10 +6,10 @@ export default function HeaderNav({ hideNav = false }) {
   const location = useLocation();
 
   const stepMap = {
-    "/home": 0,
-    "/result": 1,
-    "/lastpage": 2,
-  };
+    "/": 0,
+    "/home": 1,
+    "/result": 2,
+    };
 
   const currentStep = stepMap[location.pathname.replace(/\/$/, "")] ?? 0;
   const totalSteps = 3;

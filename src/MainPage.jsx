@@ -42,7 +42,7 @@ export default function MainPage() {
           className="info-card"
           variants={cardVariants}
           whileHover={{ scale: 1.03 }} // ✅ 이걸로 확실하게 동작시킴
-          onClick={() => navigate("")}
+          onClick={() => navigate("/jiwon")}
         >
           <span className="info-card-title">스마트팜 창업 지원 정책</span>
           <h4 className="info-card-desc">수직농장,<br /> 스마트 온실 등<br />미래형 농업 시설<br />설립 지원 받기</h4>
