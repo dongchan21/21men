@@ -7,11 +7,12 @@
   background-color: transparent;
   overflow: visible;
   position: relative;
+  margin-top: 6rem;
 }
 
 .info-card {
-  background-color: black;
-  color: white;
+  background-color: #f0f0f0;
+  color: rgb(49, 48, 48);
   border-radius: 1rem;
   padding: 1.5rem;
   width: 260px;
