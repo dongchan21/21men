@@ -16,7 +16,7 @@ export default function HomePage() {
       <header className="main-header" style={{ display: 'flex', alignItems: 'center', padding: '10px 20px' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img src="/logo.png" alt="로고" style={{ width: '40px', height: '40px', marginRight: '12px' }} />
-          <h2 style={{ margin: 0, fontSize: '20px' }}>Resource Corp.</h2>
+          <h2 style={{ margin: 0, fontSize: '20px' }}>Farm Link</h2>
         </div>
       </header>
 
