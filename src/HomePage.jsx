@@ -27,21 +27,21 @@ export default function HomePage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Card style={{
-    width: "400px",
+    width: "700px",
     height: "auto",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)", // ✅ 그림자 강조
     borderRadius: "16px"
   }}>
             
               <div style={{
-      maxWidth: '400px',
+      maxWidth: '700px',
       margin: '0 auto',
       textAlign: 'center',
-      padding: '24px',
+      padding: '28px',
       borderRadius: '16px',
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
     }}>
-      <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '12px' }}>
+      <h2 style={{ fontSize: '27px', fontWeight: 'bold', marginBottom: '16px' }}>
         내 땅에 설치 가능한 스마트팜을 알려드릴게요!
       </h2>
 
@@ -51,15 +51,15 @@ export default function HomePage() {
         color: '#2d7a42',
         borderRadius: '999px',
         padding: '6px 16px',
-        fontSize: '14px',
+        fontSize: '16px',
         fontWeight: 'bold',
-        marginBottom: '16px'
+        marginBottom: '18px'
       }}>
         내 토지에 적합한 스마트팜 유형 🧑‍🌾 최대 4가지 선택 가능!
       </div>
 
 
-      <div style={{ textAlign: 'left', fontSize: '14px', lineHeight: '1.6', marginBottom: '24px' }}>
+      <div style={{ textAlign: 'left', fontSize: '18px', lineHeight: '1.6', marginBottom: '28px' }}>
         <p><strong>✅ 복잡한 법적 조건은 저희가 다 확인했어요</strong><br />설치 가능 여부만 간편하게 확인하세요.</p>
         <p><strong>🗺️ 위치 기반으로 확인해요</strong><br />지역마다 다른 정책, 주소 한 번으로 정리해드려요.</p>
         <p><strong>📚 설치 가능 여부뿐 아니라</strong><br />각 스마트팜 유형의 특징과 장단점도 함께 정리해드려요.</p>
@@ -69,6 +69,12 @@ export default function HomePage() {
                   placeholder="주소를 입력하세요"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  style={{
+                    fontSize: '16px',       // ✅ 글자 크기 키움
+                    padding: '14px 16px',   // ✅ 입력창 자체 크기 키움
+                    height: '50px',         // ✅ 높이 조절 (선택)
+                    borderRadius: '8px'     // ✅ 좀 더 둥글게
+                  }}
                 />
          <br></br>
          <br></br>
@@ -77,10 +83,10 @@ export default function HomePage() {
         width: '100%',
         backgroundColor: '#1aaf5d',
         color: '#fff',
-        padding: '12px',
+        padding: '16px',
         border: 'none',
         borderRadius: '8px',
-        fontSize: '16px',
+        fontSize: '18px',
         fontWeight: 'bold',
         cursor: 'pointer'
       }}>
