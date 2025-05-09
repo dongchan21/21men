@@ -30,8 +30,7 @@ export default function HomePage() {
     width: "400px",
     height: "auto",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)", // ✅ 그림자 강조
-    borderRadius: "16px",
-    backgroundColor: "#fff"
+    borderRadius: "16px"
   }}>
             
               <div style={{
@@ -39,7 +38,6 @@ export default function HomePage() {
       margin: '0 auto',
       textAlign: 'center',
       padding: '24px',
-      backgroundColor: '#fff',
       borderRadius: '16px',
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
     }}>
