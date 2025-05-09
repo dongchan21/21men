@@ -1,5 +1,5 @@
-// src/MainPage.jsx
-import "./App.css"
+import HeaderNav from "./components/ui/HeaderNav";
+import "./App.css";
 import "./MainPage.css";
 
 
@@ -10,11 +10,11 @@ export default function MainPage() {
     
   return (
     <div className="page-container">
-    
+      <HeaderNav hideNav={true} />
       <div className="card-grid">
         {/* 스마트팜 카드 */}
         <div className="info-card" onClick={() => navigate("/age")}>
-        <span className="info-card-title">Smart Farm</span>
+        <span className="info-card-title">스마트팜이란?</span>
         <p className="info-card-desc">수직농장,<br /> 스마트 온실 등<br />미래형 농업 시설의 등장</p>
         
         <div className="spacer" /> {/* 유동 공간 */}
