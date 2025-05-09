@@ -10,15 +10,11 @@ export default function HomePage() {
   const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    navigate("/result", { state: { address } });
-  };
-
   return (
     <div className="page-container">
       <HeaderNav />
       <div className="container">
-        <Card>
+        <Card style={{ width: "400px", height: "300px" }}>
           <CardContent>
             <h1 className="title">지원금을 받아봐요!</h1>
             <div className="form-group">
@@ -27,7 +23,7 @@ export default function HomePage() {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
-              <Button onClick={handleSubmit}>확인하기</Button>
+              <Button onClick={() => navigate("/result", { state: { address } })}>확인하기</Button>
             </div>
           </CardContent>
         </Card>
