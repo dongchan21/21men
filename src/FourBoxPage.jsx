@@ -58,6 +58,18 @@ export default function FourBoxPage() {
       </header>
 
       <div className="page">
+        <div className="region-label">
+          {(() => {
+            const trimmed = address.trim();
+            if (trimmed === "울산광역시 북구 신천동 548-1")
+              return <>당신의 주소는 <strong className="region-type green">농업진흥지역</strong>에 해당합니다.</>;
+            if (trimmed === "강원특별자치도 태백시 화전동 322-34")
+              return <>당신의 주소는 <strong className="region-type blue">일반 농지</strong>에 해당합니다.</>;
+            if (trimmed === "경기도 성남시 수정구 사송동 687")
+              return <>당신의 주소는 <strong className="region-type red">개발제한구역(그린벨트)</strong>에 해당합니다.</>;
+            return <>당신의 주소는 <strong className="region-type gray">미분류 지역</strong>입니다.</>;
+          })()}
+        </div>
         <div className="content-group">
           <div className={`box-grid${popupBox ? ' with-popup' : ''} ${boxEntered ? 'box-entered' : ''}`}>
             {boxes.map((box) => {
@@ -98,7 +110,7 @@ export default function FourBoxPage() {
                   {/* 건설 여부 표시 */}
                   {(() => {
                     const addressTrimmed = address.trim();
-                    const isGreen =
+                      const isGreen =
                       addressTrimmed === "강원특별자치도 태백시 화전동 322-34" ||
                       (addressTrimmed === "울산광역시 북구 신천동 548-1" && popupBox.id === 1);
 
@@ -131,6 +143,47 @@ export default function FourBoxPage() {
                 {popupBox.title === "컨테이너형 스마트팜" &&
                   "컨테이너 내부에 스마트팜 기술을 탑재해 설치와 이동이 간편한 소형 재배 시스템."}
               </p>
+
+              {(() => {
+                const trimmed = address.trim();
+
+                 if (trimmed === "울산광역시 북구 신천동 548-1" && popupBox.id === 1) {
+                  return (
+                    <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#f9f9f9', borderRadius: '0.5rem', border: '1px solid #ccc', fontSize: '14px' }}>
+                      <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>📌 농업진흥지역은 농업시설 중 일부만 제한적으로 허용됩니다.</p>
+                      <p style={{ margin: 0, lineHeight: '1.4' }}>
+                        📞 <strong>관할 지자체 안내</strong><br />
+                        울산광역시 북구청 농수산과<br />
+                        전화: <a href="tel:052-241-7652">052-241-7652</a>
+                      </p>
+                    </div>
+                  );
+                } else if (trimmed === "강원특별자치도 태백시 화전동 322-34") {
+                  return (
+                    <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#f9f9f9', borderRadius: '0.5rem', border: '1px solid #ccc', fontSize: '14px' }}>
+                      <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>📌 모든 시설은 지자체 허가 및 농지전용 협의 절차 필요합니다.</p>
+                      <p style={{ margin: 0, lineHeight: '1.4' }}>
+                        📞 <strong>관할 지자체 안내</strong><br />
+                        태백시청 농업기술센터 농업정책팀<br />
+                        전화: <a href="tel:033-550-2781">033-550-2781</a>
+                      </p>
+                    </div>
+                  );
+                } else if (trimmed === "경기도 성남시 수정구 사송동 687") {
+                  return (
+                    <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: '#f9f9f9', borderRadius: '0.5rem', border: '1px solid #ccc', fontSize: '14px' }}>
+                      <p style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>📌 개발제한구역은 원칙적으로 농업시설 포함한 대부분의 시설 설치가 제한됩니다. 예외적 허용은 지자체 협의를 통해 판단됩니다.</p>
+                      <p style={{ margin: 0, lineHeight: '1.4' }}>
+                        📞 <strong>관할 지자체 안내</strong><br />
+                        성남시청 도시계획과<br />
+                        전화: <a href="tel:031-729-3671">031-729-3671</a>
+                      </p>
+                    </div>
+                  );
+                }
+              return null;
+            })()}
+
 
               <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
                 <Button onClick={() => navigate("/jiwon")}>지원 자격 확인!</Button>

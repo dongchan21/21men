@@ -138,6 +138,8 @@
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
+
+
 .box-header-label {
   text-align: center;
   font-size: 22px;
@@ -186,3 +188,46 @@
 .buildable-label.red {
   color: red;
 }
+
+.region-label {
+  position: absolute;
+  top: 120px; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  z-index: 10;
+}
+
+
+.region-type {
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.region-type.green {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.region-type.blue {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.region-type.red {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.region-type.gray {
+  background-color: #eeeeee;
+  color: #555;
+}
+
