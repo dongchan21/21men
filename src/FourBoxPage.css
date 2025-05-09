@@ -52,8 +52,8 @@
 }
 
 .box {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   background-color: #f0f0f0;
   border-radius: 0.75rem;
   display: flex;
@@ -63,6 +63,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease;
+  font-size: 20px;
 }
 
 .box-image {
@@ -74,7 +75,7 @@
 }
 
 .popup {
-  width: 260px;
+  width: 300px;
   padding: 1rem;
   border-left: 2px solid #ddd;
   background-color: #fff;
@@ -85,6 +86,7 @@
   height: 100%;
   box-sizing: border-box;
   margin-left: 0;
+  font-size: 18px;
 }
 
 .popup-slide-in {
@@ -171,13 +173,13 @@
 }
 
 .popup-title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .buildable-label {
   margin-top: 4px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -194,7 +196,7 @@
   top: 120px; 
   left: 50%;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   padding: 10px 24px;
   border-radius: 1rem;

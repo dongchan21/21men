@@ -186,7 +186,7 @@ export default function FourBoxPage() {
 
 
               <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
-                <Button onClick={() => navigate("/jiwon")}>지원 자격 확인!</Button>
+                <Button style={{ fontWeight: 'bold', fontSize: '20px' }} onClick={() => navigate("/jiwon")}>지원 자격 확인!</Button>
               </div>
             </div>
           )}
