@@ -27,14 +27,15 @@ export default function HomePage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Card style={{
-    width: "700px",
+    width: "100%",
+    maxWidth: "1100px",
     height: "auto",
     boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)", // ✅ 그림자 강조
     borderRadius: "16px"
   }}>
             
               <div style={{
-      maxWidth: '700px',
+      maxWidth: '1000px',
       margin: '0 auto',
       textAlign: 'center',
       padding: '28px',
@@ -42,7 +43,7 @@ export default function HomePage() {
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
     }}>
       <h2 style={{ fontSize: '27px', fontWeight: 'bold', marginBottom: '16px' }}>
-        내 땅에 설치 가능한 스마트팜을 알려드릴게요!
+        내 땅에 설치 가능한 스마트팜 시설을 알려드릴게요!
       </h2>
 
       <div style={{
@@ -90,7 +91,7 @@ export default function HomePage() {
         fontWeight: 'bold',
         cursor: 'pointer'
       }}>
-        설치 가능 스마트팜 확인하기
+        설치 가능 시설 확인하기
       </button>
     </div>
           </Card>
