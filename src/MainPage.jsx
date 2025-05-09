@@ -48,7 +48,7 @@ export default function MainPage() {
           <h4 className="info-card-desc">수직농장,<br /> 스마트 온실 등<br />미래형 농업 시설<br />설립 지원 받기</h4>
           <div className="spacer" />
           <div className="image-box">
-            <img src="/tree.png" alt="나무" />
+            <img src="/money.png" alt="지원원" />
           </div>
           <p className="info-card-link">세계적 식량 문제 해결 &gt;</p>
         </motion.div>
@@ -64,7 +64,7 @@ export default function MainPage() {
           <h4 className="info-card-desc">내 땅에 스마트팜<br />시설을 설립할 수<br />있나요?</h4>
           <div className="spacer" />
           <div className="image-box">
-            <img src="/money.png" alt="지원 이미지" />
+            <img src="/factory.png" alt="공장" />
           </div>
           <p className="info-card-link">나라 돈 뜯어먹기 &gt;</p>
         </motion.div>
