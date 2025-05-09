@@ -1,0 +1,78 @@
+.page {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    gap: 64px;
+  }
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+.page.centered {
+    justify-content: center;
+  }
+  
+.page.with-popup {
+    justify-content: flex-start;
+  }
+  
+  .box-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 60%;
+  }
+
+  .box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;   
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .box-image {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;   /* ✅ 이미지 비율 유지하면서 잘 맞춰줌 */
+  border-radius: 6px;  /* 선택: 둥글게 하고 싶을 경우 */
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+  .box:hover {
+    background-color: #e4e4e4;
+  }
+
+  .popup {
+    width: 25%;
+    margin-left: 40px !important;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .popup-header button {
+    background: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
