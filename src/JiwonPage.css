@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  height: 90vh;
+  padding: 40px;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* 5대5 비율 설정 */
+.question-section {
+  width : 30%;
+  height: 70%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.result-section {
+  width: 30%;
+  height: 70%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* 질문 항목 간격 + 글씨 크기 확대 */
+.q {
+  margin-bottom: 24px;
+  font-size: 18px; /* 🔥 크기 키움 */
+}
+
+label {
+  font-weight: 500;
+  font-size: 18px; /* 🔥 라벨 글씨도 키움 */
+}
+
+.result-section h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.result-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result-section li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.6;
+}
