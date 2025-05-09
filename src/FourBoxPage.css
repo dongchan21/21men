@@ -75,7 +75,8 @@
 }
 
 .popup {
-  width: 300px;
+  width: 430px;
+  height: 430px;
   padding: 1rem;
   border-left: 2px solid #ddd;
   background-color: #fff;
@@ -83,10 +84,10 @@
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  height: 100%;
+
   box-sizing: border-box;
   margin-left: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .popup-slide-in {
@@ -173,13 +174,13 @@
 }
 
 .popup-title {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 .buildable-label {
   margin-top: 4px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
 }
 
