@@ -101,10 +101,11 @@ export default function FourBoxPage() {
                     const isGreen =
                       addressTrimmed === "강원특별자치도 태백시 화전동 322-34" ||
                       (addressTrimmed === "울산광역시 북구 신천동 548-1" && popupBox.id === 1);
+
                     const isRed =
                       addressTrimmed === "경기도 성남시 수정구 사송동 687" ||
                       (addressTrimmed === "울산광역시 북구 신천동 548-1" && popupBox.id !== 1) ||
-                      (!isGreen && !isRed); // 나머지도 빨강 처리
+                      (!isGreen); // ✅ 여기만 사용
 
                     if (isGreen) {
                       return <div className="buildable-label green">✅ 건설 가능!</div>;
