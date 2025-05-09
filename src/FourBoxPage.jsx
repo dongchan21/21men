@@ -92,15 +92,52 @@ export default function FourBoxPage() {
           {popupBox && (
             <div className={`popup ${isLeaving ? 'popup-leave-up' : ''} ${isClosing ? 'popup-leave-close' : 'popup-slide-in'}`}>
               <div className="popup-header">
-                <strong>{popupBox.title}</strong>
+                <div className="popup-title-group">
+                  <strong className="popup-title">{popupBox.title}</strong>
+
+                  {/* 건설 여부 표시 */}
+                  {(() => {
+                    const addressTrimmed = address.trim();
+                    const isGreen =
+                      addressTrimmed === "강원특별자치도 태백시 화전동 322-34" ||
+                      (addressTrimmed === "울산광역시 북구 신천동 548-1" && popupBox.id === 1);
+                    const isRed =
+                      addressTrimmed === "경기도 성남시 수정구 사송동 687" ||
+                      (addressTrimmed === "울산광역시 북구 신천동 548-1" && popupBox.id !== 1) ||
+                      (!isGreen && !isRed); // 나머지도 빨강 처리
+
+                    if (isGreen) {
+                      return <div className="buildable-label green">✅ 건설 가능!</div>;
+                    } else if (isRed) {
+                      return <div className="buildable-label red">❌ 건설 불가능...</div>;
+                    } else {
+                      return null;
+                    }
+                  })()}
+                </div>
+
                 <button onClick={handleClose}>닫기</button>
               </div>
-              <p>지원 관련 정보를 여기에 표시합니다.</p>
+
+
+              <p className="popup-description">
+                {popupBox.title === "스마트 온실" &&
+                  "센서와 자동제어 시스템으로 온도·습도 등 환경을 조절해 작물 생장을 최적화하는 지능형 온실."}
+                {popupBox.title === "수직 농장" &&
+                  "다층 구조로 작물을 재배하여 공간 효율을 높이고 생산성을 극대화한 농업 방식."}
+                {popupBox.title === "식물 공장" &&
+                  "인공조명과 폐쇄 환경을 이용해 연중 안정적인 작물 생산이 가능한 시스템."}
+                {popupBox.title === "컨테이너형 스마트팜" &&
+                  "컨테이너 내부에 스마트팜 기술을 탑재해 설치와 이동이 간편한 소형 재배 시스템."}
+              </p>
+
               <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
                 <Button onClick={() => navigate("/jiwon")}>지원 자격 확인!</Button>
               </div>
             </div>
           )}
+
+
         </div>
       </div>
 

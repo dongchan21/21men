@@ -118,12 +118,6 @@
   }
 }
 
-.popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.625rem;
-}
 
 .popup-header button {
   background: none;
@@ -160,4 +154,35 @@
   font-weight: bold;
   margin: 30px 0 20px;
   color: #333;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 제목 + 상태는 위쪽 정렬 */
+  gap: 12px;
+}
+
+.popup-title-group {
+  display: flex;
+  flex-direction: column; /* 제목과 상태 세로로 정렬 */
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.buildable-label {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.buildable-label.green {
+  color: green;
+}
+
+.buildable-label.red {
+  color: red;
 }
