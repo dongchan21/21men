@@ -53,3 +53,15 @@ label {
   font-size: 18px;
   line-height: 1.6;
 }
+
+.program-title {
+  cursor: pointer;
+  color: #000000;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.program-title:hover {
+  color: #858181;
+  text-decoration: none;
+}
