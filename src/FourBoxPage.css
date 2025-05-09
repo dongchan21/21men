@@ -1,80 +1,137 @@
 .page {
   display: flex;
   height: 100vh;
-  padding: 20px 40px; /* ←✅ 좌우 여백 균형 있게 */
+  padding: 20px 40px;
   box-sizing: border-box;
   font-family: sans-serif;
-  gap: 64px; /* box와 popup 사이 간격 */
+  gap: 64px;
+  transition: all 0.5s ease;
 }
 
-
 .page-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 
 .page.centered {
-    justify-content: center;
-  }
-  
+  justify-content: center;
+}
+
 .page.with-popup {
-    justify-content: flex-start;
-  }
-  
+  justify-content: flex-start;
+}
+
 .box-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  width: 60%; /* 또는 원하는 고정값 (예: 720px) */
+  width: 60%;
+  transition: transform 0.5s ease;
+  transform: translateX(0);
 }
 
+.box-grid.animate {
+  transform: translateX(-20px);
+}
 
-  .box {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 16px;   
-    align-items: center;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  .box-image {
-  width: 330px;
-  height: 180px;
-  object-fit: cover;   /* ✅ 이미지 비율 유지하면서 잘 맞춰줌 */
-  border-radius: 6px;  /* 선택: 둥글게 하고 싶을 경우 */
-  margin-bottom: 10px;
+.box {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
   align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.5s ease;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
 }
 
-  .box:hover {
-    background-color: #e4e4e4;
-  }
+.box:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.box:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.box:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.box:nth-child(4) {
+  animation-delay: 0.2s;
+}
 
-  .popup {
-    width: 25%;
-    margin-left: 40px !important;
-    padding: 20px;
-    border-left: 2px solid #ddd;
-    background-color: #fff;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .popup-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+.box-image {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
+  margin: 0 auto 10px auto;
+  display: block;
+}
 
-  .popup-header button {
-    background: none;
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
+.box:hover {
+  background-color: #e4e4e4;
+}
+
+.popup {
+  width: 25%;
+  margin-left: 40px !important;
+  padding: 20px;
+  border-left: 2px solid #ddd;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.popup.slide-out {
+  animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.popup-header button {
+  background: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
