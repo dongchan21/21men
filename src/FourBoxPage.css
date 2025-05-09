@@ -1,124 +1,120 @@
-.page {
+/* FourBoxPage.css */
+
+.page-container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
-  padding: 20px 40px;
+  overflow: hidden;
   box-sizing: border-box;
   font-family: sans-serif;
-  gap: 64px;
-  transition: all 0.5s ease;
 }
 
-.page-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.page.centered {
+.page {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
 }
 
-.page.with-popup {
-  justify-content: flex-start;
+.content-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* updated from 0 to 2rem for spacing */
+  margin: 0;
+  padding: 0;
 }
 
 .box-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 60%;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+  gap: 1.5rem;
   transition: transform 0.5s ease;
-  transform: translateX(0);
-}
-
-.box-grid.animate {
-  transform: translateX(-20px);
-}
-
-.box {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  font-size: 16px;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.5s ease;
-  text-align: center;
+  margin: 0 !important;
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.4s ease forwards;
+  transform: translateY(40px);
 }
 
-.box:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.box:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.box:nth-child(3) {
-  animation-delay: 0.15s;
-}
-.box:nth-child(4) {
-  animation-delay: 0.2s;
+.box-grid.box-entered {
+  animation: box-fade-in 0.6s ease forwards;
 }
 
-@keyframes fadeInUp {
+@keyframes box-fade-in {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.box-image {
-  width: 200px;
-  height: 150px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 6px;
-  margin: 0 auto 10px auto;
-  display: block;
+.box-grid.with-popup {
+  transform: translateX(-30px);
 }
 
-.box:hover {
-  background-color: #e4e4e4;
+.box {
+  width: 160px;
+  height: 160px;
+  background-color: #f0f0f0;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.box-image {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
 }
 
 .popup {
-  width: 25%;
-  margin-left: 40px !important;
-  padding: 20px;
+  width: 260px;
+  padding: 1rem;
   border-left: 2px solid #ddd;
   background-color: #fff;
+  border-radius: 0.75rem;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  animation: slideIn 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  margin-left: 0;
 }
 
-.popup.slide-out {
-  animation: slideOut 0.5s ease forwards;
+.popup-slide-in {
+  animation: popup-slide-in 0.4s ease forwards;
 }
 
-@keyframes slideIn {
+.popup-leave-up,
+.popup-leave-close {
+  animation: popup-leave-up 0.4s ease forwards;
+}
+
+@keyframes popup-slide-in {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-@keyframes slideOut {
+@keyframes popup-leave-up {
   from {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
   to {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateY(-20px);
   }
 }
 
@@ -126,12 +122,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .popup-header button {
   background: none;
-  border-radius: 4px;
-  padding: 4px 8px;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
   cursor: pointer;
 }

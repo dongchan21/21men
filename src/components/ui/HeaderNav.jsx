@@ -6,14 +6,13 @@ export default function HeaderNav({ hideNav = false }) {
   const location = useLocation();
 
   const stepMap = {
-    "/age": 0,
-    "/home": 1,
-    "/result": 2,
-    "/lastpage": 3,
+    "/home": 0,
+    "/result": 1,
+    "/lastpage": 2,
   };
 
   const currentStep = stepMap[location.pathname.replace(/\/$/, "")] ?? 0;
-  const totalSteps = 4;
+  const totalSteps = 3;
   const progressPercent = (currentStep / (totalSteps - 1)) * 100;
 
   return (
@@ -21,7 +20,7 @@ export default function HeaderNav({ hideNav = false }) {
       {!hideNav && (
         <>
           <button className="text-button" onClick={() => window.history.back()}>
-            ← 이전
+            ≪ 이전
           </button>
           <div className="progress-bar-container">
             <div
@@ -31,7 +30,7 @@ export default function HeaderNav({ hideNav = false }) {
           </div>
           
           <button className="text-button" onClick={() => navigate("/")}>
-            Home
+            <img src="/home.gif" alt="집집" style={{ width: '40px', height: '40px', marginRight: '12px' }} />
           </button>
         </>
       )}
