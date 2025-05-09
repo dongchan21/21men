@@ -50,7 +50,7 @@ export default function MainPage() {
           <div className="image-box">
             <img src="/money.png" alt="지원원" />
           </div>
-          <p className="info-card-link">세계적 식량 문제 해결 &gt;</p>
+          <p className="info-card-link">최대 30억 혜택 받기 &gt;</p>
         </motion.div>
 
         {/* 카드 2 */}
@@ -66,7 +66,7 @@ export default function MainPage() {
           <div className="image-box">
             <img src="/factory.png" alt="공장" />
           </div>
-          <p className="info-card-link">나라 돈 뜯어먹기 &gt;</p>
+          <p className="info-card-link">세계적 식량 문제 해결 &gt;</p>
         </motion.div>
 
         {/* 카드 3 */}
