@@ -159,9 +159,3 @@
   transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-.choice-card:hover {
-  background-color: #e0f2fe;
-  border-color: #38bdf8;
-  transform: translateY(-4px);
-}
