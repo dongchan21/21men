@@ -2,14 +2,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./MainPage";
 import HomePage from "./HomePage";
-import AgePage from "./AgePage";
 import ResultPage from "./ResultPage";
 import FourBoxPage from "./FourBoxPage";
 
 import "./App.css"
 import "./HomePage.css";
 import "./MainPage.css";
-import "./AgePage.css";
 import "./FourBoxPage.css";
 
 export default function App() {
@@ -18,7 +16,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/age" element={<AgePage />} />
         <Route path="/result" element={<FourBoxPage />} />
       </Routes>
     </Router>
